@@ -29,17 +29,14 @@ public class P11729 {
 		br.close();
 	}
 	
-	private static int hanoi(int from, int to, int n, BufferedWriter bw) throws IOException {
+	private static void hanoi(int from, int to, int n, BufferedWriter bw) throws IOException {
+	
 		if(n == 1) {
 			bw.write(from + " " + to + "\n");
-			//System.out.println(from + " " + to);
-			return 0;
+		} else {		
+			hanoi(from, 6 - from - to, n-1, bw);
+			bw.write(from + " " + to + "\n");
+			hanoi(6 - from - to, to, n-1, bw);			
 		}
-		
-		hanoi(from, 6 - from - to, n-1, bw);
-		bw.write(from + " " + to + "\n");
-		//System.out.println(from + " " + to);
-		hanoi(6 - from - to, to, n-1, bw);
-		return 0;
 	}
 }

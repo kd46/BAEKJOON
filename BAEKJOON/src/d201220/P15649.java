@@ -31,7 +31,7 @@ public class P15649 {
 				arr[cnt] = i;
 				cArr(n, m, arr, check, cnt + 1);
 				check[i] = false;
-			}
+			} 
 		}
 	}
 }
